@@ -8,18 +8,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ClienteServiceTest {
-    
-@Test
-public void naoDeveAceitarNomeVazio() {
 
-    ClienteService service =
-            new ClienteService();
+    @Test
+    public void naoDeveAceitarNomeVazio() {
 
-    boolean resultado =
-            service.validarNome("");
+        ClienteService service =
+                new ClienteService();
 
-    assertFalse(resultado);
-}
+        assertFalse(
+                service.validarNome("")
+        );
+    }
 
     @Test
     public void deveValidarNomeCorretamente() {
@@ -27,11 +26,8 @@ public void naoDeveAceitarNomeVazio() {
         ClienteService service =
                 new ClienteService();
 
-        boolean resultado =
-                service.validarNome("João");
-
-        assertTrue(resultado);
-        
-        
+        assertTrue(
+                service.validarNome("João")
+        );
     }
 }
